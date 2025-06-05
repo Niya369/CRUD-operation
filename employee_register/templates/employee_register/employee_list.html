@@ -1,0 +1,63 @@
+ {% comment %} {% extends "employee_register/base.html" %}
+
+{% block content %}
+<h2>Employee List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for emp in employee_list %}
+        <tr>
+            <td>{{ emp.fullname }}</td>
+            <td>{{ emp.mobile }}</td>
+            <td>{{ emp.position }}</td>
+            <td>
+                <a href="{% url 'employee_update' emp.id %}" class="btn btn-sm btn-info">Edit</a>
+                <a href="{% url 'employee_delete' emp.id %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'employee_insert' %}" class="btn btn-primary mt-3">Add New</a>
+{% endblock content %} {% endcomment %}
+
+
+
+
+
+{% extends "employee_register/base.html" %}
+
+{% block content %}
+<h2>Employee List</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for emp in employee_list %}
+        <tr>
+            <td>{{ emp.fullname }}</td>
+            <td>{{ emp.mobile }}</td>
+            <td>{{ emp.position }}</td>
+            <td>
+                <a href="{% url 'employee_update' emp.id %}" class="btn btn-sm btn-info">Edit</a>
+                <a href="{% url 'employee_delete' emp.id %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'employee_insert' %}" class="btn btn-primary mt-3">Add New</a>
+{% endblock content %}
